@@ -39,6 +39,7 @@ export default {
       console.log("moving");
       todoItem.completed = !todoItem.completed;
 
+      //아이템 갱신
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     }
   },
