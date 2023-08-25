@@ -7,6 +7,7 @@
     <TodoList
       v-bind:propsData="todoItems"
       v-on:removeItem="removeOneItem"
+      v-on:toggleItem="toggleOneItem"
     ></TodoList>
     <TodoFooter v-on:clearToDoAll="clearAll"></TodoFooter>
   </div>
@@ -37,6 +38,8 @@ export default {
 
         // console.log(localStorage.key(i));
       }
+    } else {
+      alert("typeSomething");
     }
   },
   components: {
@@ -57,7 +60,14 @@ export default {
     },
     clearAll: function() {
       localStorage.clear();
+      this.todoItems = [];
       // this.todoItems.unshift;
+    },
+    toggleOneItem: function(todoItem, index) {
+      // todoItem.completed = !todoItem.completed;
+      this.todoItems[index].completed = !this.todoItems[index].completed;
+      //아이템 갱신
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     }
   }
 };

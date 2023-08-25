@@ -31,10 +31,7 @@ export default {
     },
     toggleComplete: function(todoItem, index) {
       console.log("moving");
-      todoItem.completed = !todoItem.completed;
-
-      //아이템 갱신
-      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+      this.$emit("toggleItem", todoItem, index);
     }
   }
   // created는 인스턴스가 생성되자마자 실행되는 라이프사이클 훅
