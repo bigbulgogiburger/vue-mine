@@ -2,7 +2,7 @@
   <div>
     <transition-group name="list" tag="ul">
       <li
-        v-for="(todoItem, index) in propsData"
+        v-for="(todoItem, index) in this.$store.state.todoItems"
         v-bind:key="todoItem.item"
         class="shadow"
       >
@@ -24,13 +24,15 @@
 
 <script>
 export default {
-  props: ["propsData"],
   methods: {
     removeTodo(todoItem, index) {
-      this.$emit("removeItem", todoItem, index);
+      const payload = { todoItem, index };
+      this.$store.commit("removeOneItem", payload);
+      // this.$emit("removeItem", todoItem, index);
     },
     toggleComplete(todoItem, index) {
-      this.$emit("toggleItem", todoItem, index);
+      const payload = { todoItem, index };
+      this.$store.commit("toggleItem", payload);
     }
   }
   // created는 인스턴스가 생성되자마자 실행되는 라이프사이클 훅
