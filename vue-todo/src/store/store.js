@@ -23,6 +23,11 @@ export const store = new Vuex.Store({
   state: {
     todoItems: storage.fetch()
   },
+  getters: {
+    storedTodoItems(state) {
+      return state.todoItems;
+    }
+  },
   mutations: {
     addOneItem(state, todoItem) {
       console.log("received");
@@ -40,9 +45,6 @@ export const store = new Vuex.Store({
     },
 
     toggleItem(state, payload) {
-      console.log(state);
-      console.log(payload.index);
-      console.log(state.todoItems[payload.index]);
       state.todoItems[payload.index].completed = !state.todoItems[payload.index]
         .completed;
       //아이템 갱신

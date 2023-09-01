@@ -16,11 +16,11 @@ import TodoInput from "./components/TodoInput.vue";
 import TodoList from "./components/TodoList.vue";
 
 export default {
-  data() {
-    return {
-      todoItems: []
-    };
-  },
+  // data() {
+  //   return {
+  //     todoItems: []
+  //   };
+  // },
 
   // created: function() {
   //   if (localStorage.length > 0) {
@@ -43,30 +43,30 @@ export default {
     TodoHeader,
     TodoInput,
     TodoList
-  },
-  methods: {
-    //store의 mutation과 같음.
-    // addOneItem(todoItem) {
-    //   const obj = { completed: false, item: todoItem };
-    //   localStorage.setItem(todoItem, JSON.stringify(obj));
-    //   this.todoItems.push(obj);
-    // },
-    // removeOneItem(todoItem, index) {
-    //   localStorage.removeItem(todoItem.item);
-    //   this.todoItems.splice(index, 1);
-    // },
-    // clearAll() {
-    //   localStorage.clear();
-    //   this.todoItems = [];
-    //   // this.todoItems.unshift;
-    // },
-    // toggleOneItem(todoItem, index) {
-    //   // todoItem.completed = !todoItem.completed;
-    //   this.todoItems[index].completed = !this.todoItems[index].completed;
-    //   //아이템 갱신
-    //   localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-    // }
   }
+  // methods: {
+  //   //store의 mutation과 같음.
+  //   // addOneItem(todoItem) {
+  //   //   const obj = { completed: false, item: todoItem };
+  //   //   localStorage.setItem(todoItem, JSON.stringify(obj));
+  //   //   this.todoItems.push(obj);
+  //   // },
+  //   // removeOneItem(todoItem, index) {
+  //   //   localStorage.removeItem(todoItem.item);
+  //   //   this.todoItems.splice(index, 1);
+  //   // },
+  //   // clearAll() {
+  //   //   localStorage.clear();
+  //   //   this.todoItems = [];
+  //   //   // this.todoItems.unshift;
+  //   // },
+  //   // toggleOneItem(todoItem, index) {
+  //   //   // todoItem.completed = !todoItem.completed;
+  //   //   this.todoItems[index].completed = !this.todoItems[index].completed;
+  //   //   //아이템 갱신
+  //   //   localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+  //   // }
+  // }
 };
 </script>
 
